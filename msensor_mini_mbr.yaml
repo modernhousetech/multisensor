@@ -1,0 +1,20 @@
+# Top line file for specific device
+
+substitutions:
+  app: msensor
+  location: mbr
+  Location: MBR
+  friendly_name: Multi sensor mbr
+  # ip_address: 192.168.2.4
+  reboot_time: 5min
+  <<: !include pin_defs_nodemcu.yaml
+
+
+# first time: comment out ip_address and use include wifi_static_ip
+<<: !include wifi.yaml
+#<<: !include wifi_static_ip.yaml
+<<: !include mqtt.yaml
+<<: !include platform_wemos_d1_mini.yaml
+<<: !include core_minimal.yaml
+# <<: !include i2c.yaml
+# <<: !include sensors1.yaml

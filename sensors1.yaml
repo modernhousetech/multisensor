@@ -1,0 +1,14 @@
+sensor:
+  - platform: dht
+    pin: ${pinClimate}
+    model: dht22    
+    temperature:
+      name: "Temp"
+    humidity:
+      name: "Humidity"
+    update_interval: 60s
+
+  - platform: tsl2561
+    name: "LUX"
+    address: 0x39
+    update_interval: 60s    

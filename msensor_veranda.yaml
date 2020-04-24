@@ -1,0 +1,20 @@
+# Top line file for specific device
+
+substitutions:
+  # Must also define in custom.cpp
+  app: msensor
+  location: veranda
+  Location: Veranda
+  friendly_name: Multi sensor veranda
+  #ip_address: 192.168.2.219
+  reboot_time: 5min
+  <<: !include pin_defs_wemos_d1_mini.yaml
+
+# first time: comment out ip_address and use include wifi_static_ip
+# or, if ota updates work fine, then just use wifi.yaml all the time
+<<: !include wifi.yaml
+#<<: !include wifi_static_ip.yaml
+<<: !include mqtt.yaml
+<<: !include platform_wemos_d1_mini_32.yaml
+<<: !include core.yaml
+<<: !include sensors2.yaml

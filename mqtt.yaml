@@ -1,0 +1,9 @@
+# include for mqtt communications mode
+# <<: !include ../secrets.yaml
+
+mqtt:
+  topic_prefix: ${app}/${location}
+  broker: !secret mqtt_local_broker
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+

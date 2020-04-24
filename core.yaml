@@ -1,0 +1,41 @@
+# The sensor defs
+
+# Enable logging 
+logger:
+
+ota:
+
+web_server:
+  port: 80
+    
+binary_sensor:
+  - platform: gpio
+    pin: ${pinMotion}
+    name: "Motion"
+    device_class: motion
+    on_press:
+      then:
+        - light.turn_on: LED    
+    on_release:
+      then:
+        - light.turn_off: LED
+
+light:
+  - platform: fastled_clockless
+    chipset: WS2812
+    pin: ${pinLed}
+    num_leds: 1
+    rgb_order: RGB
+    name: "LED"
+    id: LED
+
+  - platform: binary
+    name: "OnboardLed"
+    output: Onboardled
+    id: ESPOnboardled
+    
+output:
+  - platform: gpio
+    pin: ${pinOutput}
+    id: Onboardled
+    inverted: True

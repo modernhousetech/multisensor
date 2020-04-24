@@ -1,0 +1,6 @@
+  pinClimate: GPIO13
+  pinMotion: GPIO12
+  pinLed: GPIO0
+  pin_i2cSda: GPIO4  
+  pin_i2cScl: GPIO5
+  pinOutput: GPIO2

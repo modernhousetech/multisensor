@@ -1,0 +1,21 @@
+# Top line file for specific device
+
+substitutions:
+  # Must also define in custom.cpp
+  app: msensor
+  location: west
+  Location: West
+  friendly_name: Multi sensor west
+  ip_address: 192.168.2.4
+  reboot_time: 5min
+  <<: !include pin_defs_nodemcu.yaml
+
+
+# first time: comment out ip_address and use include wifi_static_ip
+#<<: !include wifi.yaml
+<<: !include wifi_static_ip.yaml
+<<: !include comm_mode/mqtt.yaml
+<<: !include platform_nodemcu.yaml
+<<: !include core.yaml
+<<: !include i2c.yaml
+<<: !include sensors1.yaml

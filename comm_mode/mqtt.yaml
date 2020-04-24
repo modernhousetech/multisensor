@@ -1,0 +1,8 @@
+# include for mqtt communications mode
+<<: !include "../../secrets.yaml"
+
+mqtt:
+  broker: !secret mqtt_local_broker
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+

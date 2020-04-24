@@ -1,0 +1,17 @@
+sensor:
+  - platform: dht
+    pin: ${pinClimate}
+    model: dht22    
+    temperature:
+      name: "Temp"
+    humidity:
+      name: "Humidity"
+    update_interval: 60s
+
+  - platform: adc
+    pin: ${pinLux}
+    name: "Multisensor Brightness"
+    unit_of_measurement: lux
+    filters:
+      - lambda: |-
+          return (x / 10000.0) * 2000000.0;
